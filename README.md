@@ -5,7 +5,7 @@
 
 A React-based movie exploration application that helps users discover films, view detailed information, and manage their watchlist. Integrated with the OMDB API for real-time movie data.
 
-![usePopcorn Record.webm](https://github.com/user-attachments/assets/8ac30b7c-c202-4b74-8a05-6dad687ac21d) <!-- Add actual screenshot path -->[usePopcorn Record.webm](https://github.com/user-attachments/assets/8ac30b7c-c202-4b74-8a05-6dad687ac21d)
+[usePopcorn Record.webm](https://github.com/user-attachments/assets/8ac30b7c-c202-4b74-8a05-6dad687ac21d)
 
 
 ## ✨ Features
