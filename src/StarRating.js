@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const starRatingStyle = {
   display: "flex",
@@ -19,6 +19,7 @@ export default function StarRating({
   className = "",
   messages = [],
   defaultRating = 0,
+  onSetRating,
 }) {
   const [rating, setRating] = useState(defaultRating);
   const [tempRating, setTempRating] = useState(0);
@@ -30,13 +31,21 @@ export default function StarRating({
     fontSize: `${size / 1.5}px`,
   };
 
+  // useEffect(() => {
+  //   setRating(defaultRating);
+  // }, [defaultRating]);
+
   return (
     <div style={starRatingStyle} className={className}>
       <div style={starRatingContainer}>
         {Array.from({ length: maxRating }, (_, i) => (
           <Star
             key={i}
-            onRate={() => setRating(i + 1)}
+            onRate={() => {
+              const newRating = i + 1;
+              setRating(newRating);
+              onSetRating(newRating); // Update parent state
+            }}
             full={tempRating ? tempRating >= i + 1 : rating >= i + 1}
             onHoverIn={() => setTempRating(i + 1)}
             onHoverOut={() => setTempRating(0)}
