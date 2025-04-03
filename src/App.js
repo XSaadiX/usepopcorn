@@ -314,7 +314,14 @@ function MovieDetails({
                   {year} - {runtime}
                 </p>
                 <p>{genre}</p>
-                <p>{imdbRating}</p>
+                <p>
+                  <b>Actors : </b>
+                  {actors}
+                </p>
+                <p>
+                  <b>Rating : </b>
+                  {imdbRating}
+                </p>
               </div>
               <section className='details-plot'>
                 {!isWatched ? (
