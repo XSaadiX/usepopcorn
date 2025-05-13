@@ -43,6 +43,12 @@ export default function App() {
   );
 
   useEffect(() => {
+    //Don't do anything if query is less than 3 characters
+    if (!query || query.length < 3) {
+      // setMovies([]);
+      setError("");
+      return;
+    }
     const controller = new AbortController();
 
     async function fetchMovies() {
@@ -75,11 +81,6 @@ export default function App() {
       }
     }
 
-    if (query.length < 3) {
-      setMovies([]); // Fixed: Changed setQuery([]) to setMovies([])
-      setError("");
-      return;
-    }
     fetchMovies();
 
     return () => {
